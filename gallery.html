@@ -1,0 +1,236 @@
+
+ <!DOCTYPE html>
+<html>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+<head>
+  <title>Dee Quin's Nail Parlour Gallery</title>
+  <style type="text/css">
+    /* Resetting the box model for consistent sizing across browsers */
+    /* Removing default margin and padding from the body and html elements */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Styling for the main image containers in the gallery */
+    .image-container {
+      margin: 0 auto; /* Centers the container horizontally */
+      width: 100%; /* Sets the width of each image container */
+      /* Creates a multi-level box shadow for a 'floating' effect */
+      margin-bottom: 20px;
+      transition-duration: 1s; /* Adds a smooth transition for hover effects */
+    }
+    
+    /* Hover effect: enlarges the container and enhances the shadow */
+    .image-container:hover {
+      width: 90%;
+      ;
+    }
+    
+    /* Makes the images inside the containers responsive to the container's size */
+    img {
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Styling for the text description below each image */
+    .image-description {
+      padding: 0 15px 15px 15px;
+      text-align: center;
+    }
+    
+    /* -------------------------------------- */
+    /* Lightbox Stylesheet */
+    /* -------------------------------------- */
+    
+    /* Styles for the full-screen modal that appears when an image is clicked */
+    .lightbox {
+      display: table; /* Used for easy vertical and horizontal centering of content */
+      transition-duration: 1s; /* Adds a fade-in/fade-out effect */
+    
+      /* Positions the lightbox to cover the entire page */
+      position: fixed;
+      top: -100%; /* Initially hides the lightbox by positioning it off-screen */
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    }
+    
+    /* This pseudo-class is activated when the URL hash matches the lightbox ID, bringing it into view */
+    .lightbox:target {
+      top: 0; /* Moves the lightbox to the top of the viewport, making it visible */
+    }
+    
+    /* Container to hold and center the image within the lightbox */
+    .lightbox-content {
+      display: table-cell;
+      vertical-align: middle; /* Vertically centers the content */
+      text-align: center; /* Horizontally centers the content */
+    }
+    
+    /* Styling for the 'CLOSE' button */
+    .close {
+      /* Positions the close button in the top-right corner of the lightbox */
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    
+      /* Basic styling for the button's appearance */
+      font-size: 20px;
+      font-weight: 300;
+      text-decoration: none;
+      color: white;
+    }
+    
+    /* Ensures the image inside the lightbox is also responsive and fits within the screen */
+    .lightbox img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1 style="text-align: center; color: #ff69b4;"> Dee Quin's Nail Parlour Gallery ðŸ’…</h1>
+  
+  <div class="gallery">
+  
+    <div class="image-container" id="container1">
+      <a href="#image1"><img src="nail01.jpg" /></a>
+      <p class="image-description">  </p>
+    </div>
+  
+    <div class="image-container" id="container2">
+      <a href="#image2"><img src="nail02.jpg" /></a>
+      <p class="image-description">  </p>
+    </div>
+  
+    <div class="image-container" >
+      <a href="#image3"><img src="nail03.jpg" /></a>
+      <p class="image-description">  </p>
+    </div>
+  
+    <div class="image-container" id="container4">
+      <a href="#image4"><img src="nail04.jpg" /></a>
+      <p class="image-description"></p>
+    </div>
+  
+    <div class="image-container" id="container5">
+      <a href="#image5"><img src="nail05.jpg" /></a>
+      <p class="image-description">
+    </div>
+  
+    <div class="image-container" id="container6">
+      <a href="#image6"><img src="nail06.jpg" /></a>
+      <p class="image-description"> </p>
+    </div>
+  
+    <div class="image-container" id="container7">
+      <a href="#image7"><img src="nail07.jpg" /></a>
+      <p class="image-description"></p>
+    </div>
+  
+    <div class="image-container" id="container8">
+      <a href="#image8"><img src="nail08.jpg" /></a>
+      <p class="image-description">  </p>
+    </div>
+  
+    <div class="image-container" id="container9">
+      <a href="#image9"><img src="nail09.jpg" /></a>
+      <p class="image-description"> </p>
+    </div>
+  
+    <div class="image-container" id="container10">
+      <a href="#image10"><img src="nail10.jpg" /></a>
+      <p class="image-description">  </p>
+    </div>
+  
+  </div>
+  
+  <div class="lightbox" id="image1">
+    <a href="#" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail01.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image2">
+    <a href="#" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail02.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image3">
+    <a href="#container3" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail03.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image4">
+    <a href="#container4" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail04.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image5">
+    <a href="#container5" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail05.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image6">
+    <a href="#container6" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail06.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image7">
+    <a href="#container7" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail07.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image8">
+    <a href="#container8" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail08.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image9">
+    <a href="#container9" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail09.jpg" />
+    </div>
+  </div>
+  
+  <div class="lightbox" id="image10">
+    <a href="#container10" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="nail10.jpg" />
+    </div>
+  </div>
+  
+  <style>
+    body{
+      background-color: white; /* Black background to match the logo */
+      color: #ff69b4; /* Pink text to match the logo */
+      font-family: Arial, sans-serif; /* A clean, readable font */
+   }
+   .image-container:hover {
+      box-shadow: 0 4px 8px 0 rgba(255, 105, 180, 0.4), 0 6px 20px 0 rgba(255, 105, 180, 0.3);
+    }
+  </style>
+  <div style="text-align: center; padding: 20px;">
+<a href="service.html" style="background-color: #C4789C; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">SOME OTHERS AND PRICES</a>
+</div> 
+</body>
+</html>
