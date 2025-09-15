@@ -1,0 +1,111 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    background-image: url("back1.jpg");
+    color: #fff;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.location-container {
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#map {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #555;
+}
+
+.address {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.get-directions-btn {
+    background-color: #C4789C;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.get-directions-btn:hover {
+    background-color: #C4789C;
+}
+
+</style>
+<body>
+
+    <div class="location-container">
+        <h2>Our Location</h2>
+        <div id="map"></div>
+        <p class="address">Nansana,Kyebanddo</p>
+        <button class="get-directions-btn">GET DIRECTIONS</button>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callb"ack=initMap" async defer></script>
+    <script src="script.js">// Function to initialize the map
+function initMap() {
+    // Location coordinates from the user's request: 0Â°20'35.4"N 32Â°31'12.0"E
+    // Converted to decimal degrees: Latitude 0.343167, Longitude 32.519999
+    const location = { lat: 0.343167, lng: 32.519999 };
+
+    // Create a new map instance
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: location
+    });
+
+    // Add a marker for the location
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Studio Suites'
+    });
+}
+
+// Get the directions button element
+const getDirectionsBtn = document.querySelector('.get-directions-btn');
+
+// Add a click event listener to the button
+getDirectionsBtn.addEventListener('click', () => {
+    // Open Google Maps in a new tab with directions to the location
+    const address = "0.343167, 32.519999";
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
+    window.open(url, '_blank');
+});
+</script>
+</body>
+</html>
